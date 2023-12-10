@@ -1,0 +1,24 @@
+{
+  "name": "@repo/database",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf .turbo && rm -rf dist && rm -rf node_modules",
+    "db:generate": "npx prisma generate",
+    "db:migrate": "npx prisma migrate dev --name init",
+    "db:studio": "npx prisma studio",
+    "lint": "eslint src --ext .ts --fix"
+  },
+  "dependencies": {
+    "@prisma/client": "5.7.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "prisma": "^5.7.0",
+    "typescript": "^5.3.3"
+  }
+}
